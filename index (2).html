@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impulse Brain Trainer — 4 se 12 Saal Ke Bacchon Ki Brain Book!</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --yellow:#FFD93D;--orange:#FF6B35;--pink:#FF4DA6;--purple:#7B2FBE;
+  --blue:#4361EE;--green:#06D6A0;--sky:#48CAE4;--white:#fff;--cream:#FFFBF0;--dark:#1A1035;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+/* STARS */
+.stars-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#0D0628 0%,#1A1035 40%,var(--cream) 100%)}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle 3s infinite}
+@keyframes twinkle{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:.2;transform:scale(.6)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:.9rem 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(13,6,40,.93);backdrop-filter:blur(14px)}
+.nav-logo{font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800;color:var(--yellow);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo span{color:#fff}
+.nav-cta{background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;padding:.6rem 1.4rem;border-radius:50px;font-weight:800;font-size:.85rem;text-decoration:none;box-shadow:0 4px 15px rgba(255,107,53,.4);transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:'Nunito',sans-serif}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,107,53,.5)}
+
+/* HERO */
+.hero{min-height:100vh;padding:9rem 5vw 5rem;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;position:relative;overflow:hidden}
+.hero-bubbles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bubble{position:absolute;border-radius:50%;opacity:.13;animation:floatBubble 6s ease-in-out infinite}
+@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,217,61,.15);border:2px solid var(--yellow);border-radius:50px;padding:.4rem 1.2rem;font-size:.8rem;font-weight:800;color:var(--yellow);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem;position:relative;z-index:1;animation:pop .6s ease .1s both}
+@keyframes pop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.hero h1{font-family:'Baloo 2',cursive;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:1.2rem;position:relative;z-index:1;animation:slideUp .7s ease .2s both}
+.hero h1 .hl{color:var(--yellow);position:relative;display:inline-block}
+.hero h1 .hl::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:4px;background:var(--yellow);border-radius:4px}
+.hero h1 .pk{color:var(--pink)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto 2.5rem;line-height:1.8;position:relative;z-index:1;animation:slideUp .7s ease .35s both}
+@keyframes slideUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;animation:slideUp .7s ease .5s both}
+.btn-main{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#1A1035;padding:1rem 2.5rem;border-radius:50px;font-weight:800;font-size:1.05rem;text-decoration:none;box-shadow:0 6px 25px rgba(255,107,53,.45);transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:'Nunito',sans-serif}
+.btn-main:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 10px 35px rgba(255,107,53,.55)}
+.btn-sec{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3);color:#fff;padding:1rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .2s}
+.btn-sec:hover{background:rgba(255,255,255,.2)}
+.floating-book{position:relative;z-index:1;margin-top:4rem;animation:floatBook 3s ease-in-out infinite}
+@keyframes floatBook{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-18px) rotate(1deg)}}
+.book-visual{width:200px;margin:0 auto;background:linear-gradient(145deg,#6B2FD9,#3D1A8C);border-radius:10px 18px 18px 10px;border:3px solid rgba(255,217,61,.5);padding:2rem 1.5rem;text-align:center;box-shadow:-8px 8px 0 rgba(0,0,0,.3),0 0 50px rgba(123,47,190,.4);position:relative;overflow:hidden}
+.book-visual::before{content:'';position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(180deg,#3D1A8C,#6B2FD9,#3D1A8C);border-right:2px solid rgba(255,217,61,.4)}
+.book-emoji{font-size:3.5rem;display:block;margin-bottom:.6rem;filter:drop-shadow(0 0 15px rgba(255,217,61,.6))}
+.book-name{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:var(--yellow);line-height:1.2;margin-bottom:.4rem}
+.book-age{font-size:.65rem;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase}
+.book-glow{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);width:160px;height:50px;background:radial-gradient(ellipse,rgba(123,47,190,.4),transparent 70%);filter:blur(8px)}
+.hero-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;position:relative;z-index:1}
+.hero-stat{text-align:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:.8rem 1.4rem;backdrop-filter:blur(5px)}
+.hero-stat-n{font-family:'Baloo 2',cursive;font-size:1.8rem;font-weight:800;color:var(--yellow);line-height:1}
+.hero-stat-l{font-size:.7rem;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* SECTION BASE */
+section{padding:6rem 5vw}
+.sec-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:.8rem;display:flex;align-items:center;gap:10px;justify-content:center}
+.sec-title{font-family:'Baloo 2',cursive;font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.15;text-align:center;margin-bottom:1rem}
+.sec-sub{text-align:center;color:#666;font-size:.95rem;max-width:580px;margin:0 auto 3.5rem;line-height:1.7}
+
+/* AGE SECTION */
+.age-section{background:#fff}
+.age-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+.age-card{border-radius:24px;padding:2rem 1.5rem;text-align:center;transition:transform .25s,box-shadow .25s;cursor:default}
+.age-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+.age-card.c1{background:linear-gradient(135deg,#FFF3CD,#FFE066);border:2px solid #FFD93D}
+.age-card.c2{background:linear-gradient(135deg,#FFDEE9,#FFB3D1);border:2px solid #FF4DA6}
+.age-card.c3{background:linear-gradient(135deg,#D0E8FF,#A8D1FF);border:2px solid #4361EE}
+.age-card-emoji{font-size:3rem;margin-bottom:1rem;display:block}
+.age-card-age{font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
+.age-card-title{font-size:.9rem;font-weight:700;margin-bottom:.5rem}
+.age-card-desc{font-size:.82rem;color:#555;line-height:1.6}
+
+/* BENEFITS */
+.benefits-section{background:var(--cream)}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.benefit-card{background:#fff;border-radius:20px;padding:2rem 1.5rem;transition:all .25s;position:relative;overflow:hidden}
+.benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0}
+.b1::before{background:linear-gradient(90deg,var(--yellow),var(--orange))}
+.b2::before{background:linear-gradient(90deg,var(--pink),var(--purple))}
+.b3::before{background:linear-gradient(90deg,var(--blue),var(--sky))}
+.b4::before{background:linear-gradient(90deg,var(--green),var(--blue))}
+.b5::before{background:linear-gradient(90deg,var(--orange),var(--pink))}
+.b6::before{background:linear-gradient(90deg,var(--purple),var(--blue))}
+.benefit-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(0,0,0,.1)}
+.benefit-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.benefit-title{font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.benefit-desc{font-size:.85rem;color:#666;line-height:1.7}
+
+/* INSIDE */
+.inside-section{background:#fff}
+.inside-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;max-width:1000px;margin:0 auto}
+.inside-item{display:flex;gap:1rem;align-items:flex-start;background:var(--cream);border-radius:16px;padding:1.4rem;border:2px solid transparent;transition:all .2s}
+.inside-item:hover{border-color:var(--yellow);background:#fff;transform:scale(1.02)}
+.inside-num{font-family:'Baloo 2',cursive;font-size:2rem;font-weight:800;color:var(--yellow);line-height:1;flex-shrink:0;text-shadow:2px 2px 0 rgba(255,107,53,.3)}
+.inside-title{font-weight:700;font-size:.95rem;margin-bottom:.3rem}
+.inside-desc{font-size:.8rem;color:#666;line-height:1.6}
+
+/* ========== GAMES ZONE ========== */
+.games-section{background:linear-gradient(160deg,#0D0628,#1A1035,#0D1F4A);padding:6rem 5vw}
+.games-sec-title{color:#fff}
+.games-sec-sub{color:rgba(255,255,255,.6)}
+.game-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem}
+.gtab{padding:.6rem 1.2rem;border-radius:50px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;cursor:pointer;transition:all .2s}
+.gtab:hover{border-color:var(--yellow);color:var(--yellow)}
+.gtab.active{background:var(--yellow);color:#1A1035;border-color:var(--yellow)}
+.game-panel{display:none;animation:gfadeIn .4s ease}
+.game-panel.active{display:block}
+@keyframes gfadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.game-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:2.5rem;max-width:760px;margin:0 auto;backdrop-filter:blur(5px)}
+.game-title{font-family:'Baloo 2',cursive;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.4rem;text-align:center}
+.game-sub{color:rgba(255,255,255,.55);font-size:.85rem;text-align:center;margin-bottom:1.8rem}
+.score-bar{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.score-pill{background:rgba(255,217,61,.1);border:1px solid rgba(255,217,61,.3);border-radius:50px;padding:.35rem 1rem;font-size:.82rem;font-weight:700;color:var(--yellow)}
+.game-btn{display:block;margin:1rem auto 0;padding:.75rem 2rem;border-radius:50px;background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 15px rgba(123,47,190,.4)}
+.game-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(123,47,190,.5)}
+.result-screen{text-align:center;padding:1rem 0}
+.result-emoji{font-size:4rem;display:block;margin-bottom:1rem}
+.result-title{font-family:'Baloo 2',cursive;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.result-sub{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:1.5rem}
+
+/* QUIZ */
+.quiz-q{font-size:1.1rem;font-weight:700;color:#fff;text-align:center;margin-bottom:1.5rem;line-height:1.5}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
+.qopt{padding:.85rem 1rem;border-radius:14px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;text-align:center;transition:all .2s}
+.qopt:hover:not(:disabled){background:rgba(255,217,61,.15);border-color:var(--yellow);color:var(--yellow)}
+.qopt.correct{background:rgba(6,214,160,.2);border-color:var(--green);color:var(--green)}
+.qopt.wrong{background:rgba(255,77,166,.15);border-color:var(--pink);color:var(--pink)}
+.qopt:disabled{cursor:default}
+.quiz-feedback{text-align:center;font-size:1rem;font-weight:800;min-height:28px;margin-bottom:.8rem}
+.quiz-progress{height:6px;background:rgba(255,255,255,.1);border-radius:6px;overflow:hidden;margin-bottom:1.5rem}
+.quiz-bar{height:100%;background:linear-gradient(90deg,var(--yellow),var(--orange));border-radius:6px;transition:width .4s}
+
+/* WORD SEARCH */
+.ws-wrap{text-align:center;overflow-x:auto;padding-bottom:.5rem}
+.ws-grid{display:inline-grid;gap:3px;user-select:none}
+.wcell{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-size:.9rem;font-weight:700;color:#fff;cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent}
+.wcell:hover{background:rgba(255,217,61,.2)}
+.wcell.selecting{background:rgba(255,217,61,.3);border-color:var(--yellow);color:var(--yellow)}
+.wcell.found0{background:rgba(6,214,160,.3);border-color:var(--green);color:var(--green)}
+.wcell.found1{background:rgba(255,77,166,.25);border-color:var(--pink);color:var(--pink)}
+.wcell.found2{background:rgba(72,202,228,.25);border-color:var(--sky);color:var(--sky)}
+.wcell.found3{background:rgba(255,107,53,.25);border-color:var(--orange);color:var(--orange)}
+.wcell.found4{background:rgba(123,47,190,.3);border-color:#B388FF;color:#B388FF}
+.wcell.found5{background:rgba(67,97,238,.3);border-color:var(--blue);color:var(--blue)}
+.word-list{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:1rem}
+.word-tag{padding:.3rem .9rem;border-radius:50px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:.8rem;font-weight:700;color:rgba(255,255,255,.7);transition:all .3s}
+.word-tag.found{text-decoration:line-through;background:rgba(6,214,160,.2);border-color:var(--green);color:var(--green)}
+.ws-timer{text-align:center;font-family:'Baloo 2',cursive;font-size:1rem;color:var(--yellow);margin-bottom:1rem}
+
+/* MEMORY */
+.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:380px;margin:0 auto 1.5rem}
+.mcard{aspect-ratio:1;border-radius:14px;cursor:pointer;perspective:600px;-webkit-tap-highlight-color:transparent}
+.mcard-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .4s}
+.mcard.flipped .mcard-inner{transform:rotateY(180deg)}
+.mcard-front,.mcard-back{position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden}
+.mcard-front{background:linear-gradient(135deg,#2D1065,#4361EE);font-size:1.5rem;color:rgba(255,255,255,.4);border:2px solid rgba(255,255,255,.1);font-family:'Baloo 2',cursive;font-weight:800}
+.mcard-back{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);font-size:1.8rem;transform:rotateY(180deg)}
+.mcard.matched .mcard-front{background:linear-gradient(135deg,#06D6A0,#4361EE)}
+
+/* MENTAL MATHS */
+.mm-problem{text-align:center;font-family:'Baloo 2',cursive;font-size:clamp(2.5rem,6vw,3.8rem);font-weight:800;color:var(--yellow);margin-bottom:1.5rem}
+.mm-timer{text-align:center;margin-bottom:.8rem}
+.mm-timer-num{font-family:'Baloo 2',cursive;font-size:2.5rem;font-weight:800;color:#fff}
+.mm-timer-label{font-size:.72rem;color:rgba(255,255,255,.4)}
+.timer-bar{height:8px;background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden;margin-bottom:1.2rem}
+.timer-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--yellow));border-radius:8px;transition:width .1s linear}
+.mm-input-row{display:flex;gap:10px;justify-content:center;align-items:center;margin-bottom:1rem}
+.mm-input{width:130px;padding:.75rem 1rem;text-align:center;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:14px;font-family:'Baloo 2',cursive;font-size:2rem;font-weight:800;color:#fff;outline:none;transition:border-color .2s}
+.mm-input:focus{border-color:var(--yellow)}
+.mm-input::-webkit-inner-spin-button{-webkit-appearance:none}
+.mm-submit{padding:.75rem 1.5rem;border-radius:14px;background:var(--yellow);color:#1A1035;border:none;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:all .2s}
+.mm-submit:hover{background:var(--orange);color:#fff}
+.mm-feedback{text-align:center;font-size:1.1rem;font-weight:800;min-height:32px}
+
+/* LOGIC */
+.logic-q{text-align:center;font-size:.95rem;color:rgba(255,255,255,.7);margin-bottom:1.2rem}
+.logic-seq{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.lseq-item{width:58px;height:58px;border-radius:14px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-family:'Baloo 2',cursive;font-weight:800}
+.lseq-item.blank{background:rgba(255,217,61,.08);border:2px dashed var(--yellow);color:rgba(255,217,61,.5);font-size:2rem}
+.logic-opts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:1rem}
+.lopt{width:58px;height:58px;border-radius:14px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;transition:all .2s}
+.lopt:hover{background:rgba(255,217,61,.2);border-color:var(--yellow);transform:scale(1.1)}
+.lopt.correct-l{background:rgba(6,214,160,.3);border-color:var(--green);transform:scale(1.1)}
+.lopt.wrong-l{background:rgba(255,77,166,.2);border-color:var(--pink);animation:shake .3s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.lg-feedback{text-align:center;font-size:1.1rem;font-weight:800;min-height:32px;margin-bottom:.8rem}
+
+/* TESTIMONIALS */
+.testi-section{background:linear-gradient(135deg,#0D0628,#1A1035,#2D1065);padding:6rem 5vw}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.testi-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:2rem;transition:all .25s;backdrop-filter:blur(5px)}
+.testi-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+.testi-stars{font-size:1.1rem;margin-bottom:1rem;letter-spacing:3px}
+.testi-text{font-style:italic;font-size:1rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:1.2rem}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0;font-family:'Baloo 2',cursive}
+.av1{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff}
+.av2{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#1A1035}
+.av3{background:linear-gradient(135deg,var(--blue),var(--sky));color:#fff}
+.testi-name{color:#fff;font-weight:700;font-size:.88rem}
+.testi-role{color:rgba(255,255,255,.5);font-size:.72rem}
+
+/* PRICING */
+.pricing-section{background:var(--cream)}
+.pricing-card{max-width:500px;margin:0 auto;background:#fff;border-radius:28px;padding:3rem 2.5rem;border:3px solid var(--yellow);box-shadow:0 20px 60px rgba(255,217,61,.2);text-align:center;position:relative;overflow:hidden}
+.pricing-card::before{content:'🌟 70% OFF 🌟';position:absolute;top:22px;right:-32px;background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;padding:.4rem 3.2rem;font-size:.7rem;font-weight:800;letter-spacing:.1em;transform:rotate(35deg)}
+.price-banner{background:linear-gradient(135deg,#FFE066,#FFD93D);border-radius:50px;padding:.5rem 1.5rem;display:inline-block;margin-bottom:1.5rem;font-size:.75rem;font-weight:800;color:#1A1035;letter-spacing:.1em;text-transform:uppercase}
+.price-old{font-size:1rem;color:#aaa;text-decoration:line-through;margin-bottom:.3rem}
+.price-big{font-family:'Baloo 2',cursive;font-size:5.5rem;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--orange),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.3rem}
+.price-rs{font-size:2.5rem;vertical-align:top;margin-top:.8rem;display:inline-block}
+.price-tag{font-size:.82rem;color:#888;margin-bottom:2rem}
+.includes{list-style:none;text-align:left;margin-bottom:2rem}
+.includes li{display:flex;gap:10px;align-items:center;padding:.55rem 0;font-size:.88rem;border-bottom:1px solid #f5f5f5}
+.includes li::before{content:'✅';flex-shrink:0}
+.btn-buy{display:block;width:100%;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#1A1035;padding:1.1rem;border-radius:50px;font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:800;border:none;cursor:pointer;box-shadow:0 8px 25px rgba(255,107,53,.4);transition:all .2s;text-decoration:none}
+.btn-buy:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 12px 35px rgba(255,107,53,.5)}
+.btn-buy:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.guarantee{margin-top:1.2rem;font-size:.78rem;color:#888;display:flex;align-items:center;gap:6px;justify-content:center}
+.upi-section{margin-top:1.8rem;padding-top:1.5rem;border-top:2px dashed #eee}
+.upi-label{font-size:.72rem;color:#aaa;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.8rem}
+.upi-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e8f4fd,#d0e8ff);border:2px solid #4361EE;color:#4361EE;padding:.6rem 1.5rem;border-radius:50px;font-size:.85rem;font-weight:700;text-decoration:none;transition:all .2s}
+.upi-btn:hover{background:linear-gradient(135deg,#4361EE,#7B2FBE);color:#fff;transform:translateY(-2px)}
+.upi-email{font-size:.72rem;color:#aaa;margin-top:.8rem}
+#pay-status{display:none;margin-top:1rem;font-size:.88rem;font-weight:700;color:var(--green)}
+
+/* FAQ */
+.faq-section{background:#fff}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:2px solid var(--cream)}
+.faq-q{padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:.95rem;gap:1rem;transition:color .2s;user-select:none}
+.faq-q:hover{color:var(--orange)}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--yellow);color:var(--dark);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;flex-shrink:0;transition:transform .3s,background .2s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s;font-size:.88rem;color:#666;line-height:1.8}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1rem}
+
+/* FOOTER */
+footer{background:linear-gradient(135deg,#0D0628,#1A1035);padding:4rem 5vw;text-align:center}
+.footer-logo{font-family:'Baloo 2',cursive;font-size:2rem;font-weight:800;color:var(--yellow);margin-bottom:.5rem}
+.footer-tag{color:rgba(255,255,255,.5);font-size:.85rem;margin-bottom:2rem}
+.footer-links{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.footer-links a{color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--yellow)}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25)}
+
+/* PAYMENT MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(13,6,40,.93);backdrop-filter:blur(10px);align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal-box{background:#fff;border-radius:28px;padding:2.5rem;width:92%;max-width:420px;position:relative;animation:pop .35s ease;border:3px solid var(--yellow)}
+.modal-top{background:linear-gradient(135deg,var(--purple),var(--blue));margin:-2.5rem -2.5rem 1.8rem;padding:2rem 2.5rem 1.5rem;border-radius:24px 24px 0 0;text-align:center}
+.modal-emoji{font-size:3rem;display:block;margin-bottom:.5rem}
+.modal-heading{font-family:'Baloo 2',cursive;font-size:1.6rem;font-weight:800;color:#fff}
+.modal-price{color:var(--yellow);font-size:1rem;font-weight:700}
+.modal-close{position:absolute;top:1rem;right:1rem;background:#f0f0f0;border:none;border-radius:50%;width:32px;height:32px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#666;transition:all .2s}
+.modal-close:hover{background:#e0e0e0}
+.method-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.2rem}
+.method-tag{padding:4px 10px;border-radius:20px;background:#f5f5f5;font-size:.7rem;font-weight:700;color:#555}
+.f-group{margin-bottom:.9rem}
+.f-label{display:block;font-size:.72rem;font-weight:700;color:#555;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.f-input{width:100%;padding:.7rem 1rem;border:2px solid #e8e8e8;border-radius:12px;font-family:'Nunito',sans-serif;font-size:.9rem;color:var(--dark);outline:none;transition:border-color .2s}
+.f-input:focus{border-color:var(--yellow)}
+.modal-pay-btn{width:100%;padding:1rem;margin-top:.5rem;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#1A1035;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:all .2s;box-shadow:0 6px 20px rgba(255,107,53,.35)}
+.modal-pay-btn:hover:not(:disabled){transform:translateY(-2px)}
+.modal-pay-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.modal-secure{text-align:center;font-size:.7rem;color:#aaa;margin-top:.7rem}
+.success-box{display:none;text-align:center;padding:.5rem 0}
+.success-box .s-emoji{font-size:3.5rem;display:block;margin-bottom:.8rem}
+.success-box h3{font-family:'Baloo 2',cursive;font-size:1.5rem;color:var(--green);margin-bottom:.4rem}
+.success-box p{font-size:.84rem;color:#666;line-height:1.6;margin-bottom:1.2rem}
+.dl-box{background:linear-gradient(135deg,#e8fff6,#d0f5e8);border:2px solid var(--green);border-radius:18px;padding:1.4rem;margin-bottom:1rem}
+.dl-box-title{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:#0a7a50;margin-bottom:1rem}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:.9rem 1.2rem;border-radius:50px;font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:800;text-decoration:none;border:none;cursor:pointer;transition:all .2s;margin-bottom:.7rem}
+.dl-btn.pdf{background:linear-gradient(135deg,#FF6B35,#e55a20);color:#fff;box-shadow:0 4px 15px rgba(255,107,53,.35)}
+.dl-btn.epub{background:linear-gradient(135deg,#4361EE,#2948cc);color:#fff;box-shadow:0 4px 15px rgba(67,97,238,.35)}
+.dl-btn.workbook{background:linear-gradient(135deg,#7B2FBE,#5a1a9a);color:#fff;box-shadow:0 4px 15px rgba(123,47,190,.35)}
+.dl-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.pay-id-box{background:#f5f5f5;border-radius:10px;padding:.6rem 1rem;font-size:.7rem;color:#888;margin-top:.8rem;word-break:break-all}
+.confetti-bar{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--yellow),var(--orange),var(--pink),var(--purple),var(--blue),var(--green));margin-bottom:1rem;animation:shimmer 2s linear infinite;background-size:200% 100%}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:600px){
+  section{padding:4rem 5vw}
+  .hero{padding:8rem 5vw 4rem}
+  .quiz-options{grid-template-columns:1fr}
+  .mem-grid{grid-template-columns:repeat(4,1fr);gap:7px}
+  .wcell{width:30px;height:30px;font-size:.78rem}
+}
+</style>
+</head>
+<body>
+
+<div class="stars-bg" id="stars"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">🧠 <span>Impulse Brain</span></a>
+  <button class="nav-cta" onclick="openPayment()">Abhi Khareedein ₹199</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bubbles" id="bubbles"></div>
+  <div class="hero-badge">✨ Bacchon Ke Liye India Ka #1 Brain Book</div>
+  <h1>Apne Bachche Ka <span class="hl">Dimag</span><br>Karo <span class="pk">Super Powerful!</span></h1>
+  <p class="hero-sub">4 se 12 saal ke bacchon ke liye ek fun, colorful aur scientific brain training book — jise padh ke bacche khushi khushi seekhenge! 🎉</p>
+  <div class="hero-actions">
+    <button class="btn-main" onclick="openPayment()">🚀 Abhi Khareedein — Sirf ₹199</button>
+    <a class="btn-sec" href="#games">🎮 Free Games Khelo!</a>
+  </div>
+  <div class="floating-book">
+    <div class="book-visual">
+      <span class="book-emoji">🧠</span>
+      <div class="book-name">IMPULSE<br>Brain Trainer</div>
+      <div class="book-age">Ages 4–12 • Digital Book</div>
+    </div>
+    <div class="book-glow"></div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-n">5,000+</div><div class="hero-stat-l">Khush Bacche</div></div>
+    <div class="hero-stat"><div class="hero-stat-n">4.9 ⭐</div><div class="hero-stat-l">Parent Reviews</div></div>
+    <div class="hero-stat"><div class="hero-stat-n">21 Din</div><div class="hero-stat-l">Fun Program</div></div>
+  </div>
+</section>
+
+<!-- AGE GROUPS -->
+<section class="age-section">
+  <div class="sec-label" style="color:var(--orange)">📚 Kis Bachche Ke Liye?</div>
+  <h2 class="sec-title">Teen <span style="color:var(--orange)">Age Groups</span> — Ek Book!</h2>
+  <p class="sec-sub">Har bacche ke brain ki growth ke hisaab se content alag hai!</p>
+  <div class="age-cards reveal">
+    <div class="age-card c1"><span class="age-card-emoji">🌱</span><div class="age-card-age" style="color:#B8860B">4–6 Saal</div><div class="age-card-title">Chote Explorers</div><div class="age-card-desc">Colorful pictures, simple puzzles aur fun rhymes se brain ki pehli training!</div></div>
+    <div class="age-card c2"><span class="age-card-emoji">🚀</span><div class="age-card-age" style="color:#C2185B">7–9 Saal</div><div class="age-card-title">Growing Champions</div><div class="age-card-desc">Memory games, focus tricks aur school ke liye smart study habits!</div></div>
+    <div class="age-card c3"><span class="age-card-emoji">⚡</span><div class="age-card-age" style="color:#1A237E">10–12 Saal</div><div class="age-card-title">Future Leaders</div><div class="age-card-desc">Critical thinking, problem solving aur emotional intelligence!</div></div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="sec-label" style="color:var(--pink)">🎯 Kya Seekhega Aapka Bachcha?</div>
+  <h2 class="sec-title">6 Zabardast <span style="color:var(--pink)">Superpowers</span></h2>
+  <p class="sec-sub">Is book ke baad aapka bachcha yeh sab khud mehsoos karega!</p>
+  <div class="benefits-grid reveal">
+    <div class="benefit-card b1"><span class="benefit-icon">🎯</span><div class="benefit-title">Kamaal Ka Focus</div><div class="benefit-desc">Homework aur padhai mein dhyan lagana seekhega — distraction khatam!</div></div>
+    <div class="benefit-card b2"><span class="benefit-icon">🧩</span><div class="benefit-title">Tez Yaaddasht</div><div class="benefit-desc">Maths tables, spellings, aur GK — sab yaad rakhna bahut aasaan!</div></div>
+    <div class="benefit-card b3"><span class="benefit-icon">💡</span><div class="benefit-title">Creative Thinking</div><div class="benefit-desc">Naye ideas soochna aur problems solve karna — creativity badhegi!</div></div>
+    <div class="benefit-card b4"><span class="benefit-icon">😊</span><div class="benefit-title">Happy & Confident</div><div class="benefit-desc">Khud par bharosa badhega — "Main kar sakta hoon!" ki feeling aayegi!</div></div>
+    <div class="benefit-card b5"><span class="benefit-icon">📚</span><div class="benefit-title">School Mein Better</div><div class="benefit-desc">Study habits sudharein, exams mein better marks aayein!</div></div>
+    <div class="benefit-card b6"><span class="benefit-icon">❤️</span><div class="benefit-title">Emotions Ko Samjhein</div><div class="benefit-desc">Gussa, udaasi — sab emotions ko manage karna seekhega!</div></div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section" id="inside">
+  <div class="sec-label" style="color:var(--blue)">📖 Book Ke Andar</div>
+  <h2 class="sec-title">Is Book Mein <span style="color:var(--blue)">Kya Kya</span> Hai?</h2>
+  <p class="sec-sub">Har chapter ek naya brain adventure — bacche baar baar padhenge!</p>
+  <div class="inside-grid reveal">
+    <div class="inside-item"><div class="inside-num">01</div><div><div class="inside-title">🧠 Mera Brain Kya Hai?</div><div class="inside-desc">Fun facts aur colorful diagrams se bacche apna brain samjhenge</div></div></div>
+    <div class="inside-item"><div class="inside-num">02</div><div><div class="inside-title">🎯 Super Focus Power</div><div class="inside-desc">Ghar par practice karne wale 5 amazing concentration games</div></div></div>
+    <div class="inside-item"><div class="inside-num">03</div><div><div class="inside-title">🔮 Memory Magic Tricks</div><div class="inside-desc">Bachche koi bhi cheez 2 minutes mein yaad kar lenge!</div></div></div>
+    <div class="inside-item"><div class="inside-num">04</div><div><div class="inside-title">🌈 Creativity Workout</div><div class="inside-desc">Drawing, storytelling aur imagination exercises</div></div></div>
+    <div class="inside-item"><div class="inside-num">05</div><div><div class="inside-title">😤 Emotions Ka Map</div><div class="inside-desc">Gussa, khushi, darr — har feeling ko manage karna seekhein</div></div></div>
+    <div class="inside-item"><div class="inside-num">06</div><div><div class="inside-title">🏆 21-Day Brain Challenge</div><div class="inside-desc">Roz ek fun activity — 3 hafte mein amazing results!</div></div></div>
+    <div class="inside-item"><div class="inside-num">07</div><div><div class="inside-title">🧩 100+ Brain Puzzles</div><div class="inside-desc">Quiz, Word Search, Logic Games, Mental Maths aur bahut kuch!</div></div></div>
+    <div class="inside-item"><div class="inside-num">08</div><div><div class="inside-title">🌟 Superhero Certificate</div><div class="inside-desc">21 din pura karne par Brain Superhero certificate milega!</div></div></div>
+  </div>
+</section>
+
+<!-- ===== GAMES ZONE ===== -->
+<section class="games-section" id="games">
+  <div class="sec-label" style="color:var(--green)">🎮 Abhi Free Mein Khelo!</div>
+  <h2 class="sec-title games-sec-title">5 Fun <span style="color:var(--yellow)">Brain Games</span> Try Karo!</h2>
+  <p class="sec-sub games-sec-sub">Yeh sirf ek jhalki hai — book mein 100+ aur bhi hain! Khelo aur score banao 🚀</p>
+
+  <div class="game-tabs">
+    <button class="gtab active" onclick="switchGame('quiz',this)">🧠 Quiz</button>
+    <button class="gtab" onclick="switchGame('wordsearch',this)">🔤 Word Search</button>
+    <button class="gtab" onclick="switchGame('memory',this)">🃏 Brain Game</button>
+    <button class="gtab" onclick="switchGame('maths',this)">➕ Mental Maths</button>
+    <button class="gtab" onclick="switchGame('logic',this)">🔮 Logic Game</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="game-panel active" id="panel-quiz">
+    <div class="game-box">
+      <div class="game-title">🧠 Brain Quiz</div>
+      <div class="game-sub">10 sawalon mein kitne sahi jawab doge?</div>
+      <div class="score-bar">
+        <span class="score-pill" id="q-score">Score: 0</span>
+        <span class="score-pill" id="q-num">Sawaal: 1/10</span>
+      </div>
+      <div class="quiz-progress"><div class="quiz-bar" id="q-bar" style="width:10%"></div></div>
+      <div id="q-area">
+        <div class="quiz-q" id="q-text"></div>
+        <div class="quiz-options" id="q-opts"></div>
+        <div class="quiz-feedback" id="q-fb"></div>
+        <button class="game-btn" id="q-next" onclick="quizNext()" style="display:none">Agla Sawaal ➡️</button>
+      </div>
+      <div class="result-screen" id="q-result" style="display:none">
+        <span class="result-emoji" id="q-r-emoji">🏆</span>
+        <div class="result-title" id="q-r-title"></div>
+        <div class="result-sub" id="q-r-sub"></div>
+        <button class="game-btn" onclick="initQuiz()">🔄 Dobara Khelo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORD SEARCH -->
+  <div class="game-panel" id="panel-wordsearch">
+    <div class="game-box">
+      <div class="game-title">🔤 Word Search</div>
+      <div class="game-sub">6 chupe hue words dhundo — click & drag karke select karo!</div>
+      <div class="score-bar">
+        <span class="score-pill" id="ws-found">Mila: 0/6</span>
+        <span class="score-pill" id="ws-time">⏱ 0s</span>
+      </div>
+      <div class="word-list" id="ws-words"></div>
+      <div class="ws-wrap"><div class="ws-grid" id="ws-grid" style="grid-template-columns:repeat(10,34px)"></div></div>
+      <div class="result-screen" id="ws-result" style="display:none">
+        <span class="result-emoji">🌟</span>
+        <div class="result-title">Sab Words Mil Gaye!</div>
+        <div class="result-sub" id="ws-r-time"></div>
+        <button class="game-btn" onclick="initWS()">🔄 Naya Puzzle</button>
+      </div>
+      <button class="game-btn" onclick="initWS()" style="margin-top:1.2rem">🔄 Naya Puzzle</button>
+    </div>
+  </div>
+
+  <!-- MEMORY -->
+  <div class="game-panel" id="panel-memory">
+    <div class="game-box">
+      <div class="game-title">🃏 Memory Match</div>
+      <div class="game-sub">Same emojis ke pairs dhundo — yaaddasht test karo!</div>
+      <div class="score-bar">
+        <span class="score-pill" id="m-pairs">Pairs: 0/8</span>
+        <span class="score-pill" id="m-moves">Moves: 0</span>
+      </div>
+      <div class="mem-grid" id="mem-grid"></div>
+      <div class="result-screen" id="m-result" style="display:none">
+        <span class="result-emoji">🧠</span>
+        <div class="result-title">Brain Champion!</div>
+        <div class="result-sub" id="m-r-sub"></div>
+        <button class="game-btn" onclick="initMemory()">🔄 Dobara Khelo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENTAL MATHS -->
+  <div class="game-panel" id="panel-maths">
+    <div class="game-box">
+      <div class="game-title">➕ Mental Maths</div>
+      <div class="game-sub">10 sawal, sirf 10 second each — jaldi socho!</div>
+      <div class="score-bar">
+        <span class="score-pill" id="mm-score">Score: 0</span>
+        <span class="score-pill" id="mm-num">Q: 1/10</span>
+      </div>
+      <div id="mm-area">
+        <div class="mm-timer"><div class="mm-timer-num" id="mm-t">10</div><div class="mm-timer-label">seconds</div></div>
+        <div class="timer-bar"><div class="timer-fill" id="mm-tb" style="width:100%"></div></div>
+        <div class="mm-problem" id="mm-prob">Press Start!</div>
+        <div class="mm-input-row">
+          <input class="mm-input" type="number" id="mm-ans" placeholder="?" onkeydown="if(event.key==='Enter')mmCheck()"/>
+          <button class="mm-submit" onclick="mmCheck()">✓</button>
+        </div>
+        <div class="mm-feedback" id="mm-fb"></div>
+      </div>
+      <div class="result-screen" id="mm-result" style="display:none">
+        <span class="result-emoji" id="mm-r-emoji">🏆</span>
+        <div class="result-title" id="mm-r-title"></div>
+        <div class="result-sub" id="mm-r-sub"></div>
+        <button class="game-btn" onclick="initMaths()">🔄 Dobara Khelo</button>
+      </div>
+      <button class="game-btn" id="mm-start" onclick="startMaths()">▶ Start Karo!</button>
+    </div>
+  </div>
+
+  <!-- LOGIC -->
+  <div class="game-panel" id="panel-logic">
+    <div class="game-box">
+      <div class="game-title">🔮 Logic Game</div>
+      <div class="game-sub">Pattern dekho — missing piece kaunsi hai?</div>
+      <div class="score-bar">
+        <span class="score-pill" id="lg-score">Score: 0</span>
+        <span class="score-pill" id="lg-lvl">Level: 1/10</span>
+      </div>
+      <div id="lg-area">
+        <div class="logic-q" id="lg-q">Sequence mein agla kya aayega?</div>
+        <div class="logic-seq" id="lg-seq"></div>
+        <div class="logic-opts" id="lg-opts"></div>
+        <div class="lg-feedback" id="lg-fb"></div>
+        <button class="game-btn" id="lg-next" onclick="logicNext()" style="display:none">Agla Level ➡️</button>
+      </div>
+      <div class="result-screen" id="lg-result" style="display:none">
+        <span class="result-emoji" id="lg-r-emoji">🔮</span>
+        <div class="result-title" id="lg-r-title"></div>
+        <div class="result-sub" id="lg-r-sub"></div>
+        <button class="game-btn" onclick="initLogic()">🔄 Dobara Khelo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="sec-label" style="color:var(--yellow)">💬 Maa-Baap Kya Kehte Hain?</div>
+  <h2 class="sec-title" style="color:#fff">Real <span style="color:var(--yellow)">Parent Reviews</span></h2>
+  <p class="sec-sub" style="color:rgba(255,255,255,.6)">Sirf genuine reviews — koi fake nahi!</p>
+  <div class="testi-grid reveal">
+    <div class="testi-card"><div class="testi-stars">⭐⭐⭐⭐⭐</div><p class="testi-text">"Meri 8 saal ki beti pahle padhai mein bilkul mann nahi lagaati thi. Is book ke 2 hafte baad teacher ne khud bol diya ki usme amazing improvement hai!"</p><div class="testi-author"><div class="testi-av av1">NS</div><div><div class="testi-name">Neha Sharma</div><div class="testi-role">Ek Khush Maa, Jaipur</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">⭐⭐⭐⭐⭐</div><p class="testi-text">"Mere 6 saal ke bete ko yeh book bahut pasand aayi — wo khud uthke karta hai activities! Mujhe force nahi karna padta. Best ₹199 ever!"</p><div class="testi-author"><div class="testi-av av2">RV</div><div><div class="testi-name">Rajesh Verma</div><div class="testi-role">IT Professional, Bengaluru</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">⭐⭐⭐⭐⭐</div><p class="testi-text">"Mera 11 saal ka beta exams mein bahut nervous ho jaata tha. Is book se ab wo much calmer hai. Board exams mein 92% aayi!"</p><div class="testi-author"><div class="testi-av av3">PK</div><div><div class="testi-name">Priya Kulkarni</div><div class="testi-role">Proud Parent, Pune</div></div></div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="sec-label" style="color:var(--orange)">🎁 Aaj Ka Special Offer</div>
+  <h2 class="sec-title">Apne Bachche Ko Do <span style="color:var(--orange)">Best Gift!</span></h2>
+  <p class="sec-sub">Ek aisi gift jo unki poori zindagi badal de!</p>
+  <div class="pricing-card reveal">
+    <div class="price-banner">🔥 Sirf ₹199 — Limited Time!</div>
+    <div class="price-old">Regular Price ₹699</div>
+    <div class="price-big"><span class="price-rs">₹</span>199</div>
+    <div class="price-tag">Ek Baar Khareedein — Hamesha Ke Liye 💛</div>
+    <ul class="includes">
+      <li>Complete Brain Trainer Book (PDF + ePub)</li>
+      <li>21-Day Daily Activity Workbook</li>
+      <li>100+ Brain Puzzles, Quiz, Word Search, Logic Games</li>
+      <li>Mental Maths Practice Sheets</li>
+      <li>Brain Superhero Certificate (Printable)</li>
+      <li>Parent Guide — Bachche Ko Kaise Help Karein</li>
+      <li>Instant Download — Turant Milega!</li>
+    </ul>
+    <button class="btn-buy" id="main-buy-btn" onclick="openPayment()">🚀 Abhi Khareedein — ₹199 Mein</button>
+    <div id="pay-status"></div>
+    <div class="guarantee">🔒 30-Day Money Back Guarantee — Koi Sawaal Nahi!</div>
+    <div class="upi-section">
+      <div class="upi-label">Ya Direct UPI Se Karein</div>
+      <a href="upi://pay?pa=YOUR_UPI_ID@upi&pn=ImpulseBrainTrainer&am=199&cu=INR&tn=BrainBook" class="upi-btn">📱 UPI / PhonePe / GPay</a>
+      <div class="upi-email">Payment ke baad screenshot bhejein: <strong>your@email.com</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="sec-label" style="color:var(--purple)">❓ Aapke Sawal</div>
+  <h2 class="sec-title">Maa-Baap <span style="color:var(--purple)">Poochte Hain</span></h2>
+  <div class="faq-list reveal">
+    <div class="faq-item"><div class="faq-q">Kya yeh book 4 saal ke chote bacchon ke liye bhi theek hai?<div class="faq-icon">+</div></div><div class="faq-a">Bilkul! 4–6 saal wale section mein sirf pictures aur simple activities hain. Parents saath baith ke karein — yeh bonding bhi badhata hai!</div></div>
+    <div class="faq-item"><div class="faq-q">Book kaunsi language mein hai?<div class="faq-icon">+</div></div><div class="faq-a">Book Hinglish (Hindi + simple English) mein hai taaki bacchon ko easily samajh aaye. Language kaafi simple aur fun rakhi gayi hai!</div></div>
+    <div class="faq-item"><div class="faq-q">Roz kitna time lagega?<div class="faq-icon">+</div></div><div class="faq-a">Sirf 15–20 minute roz! Fun activities hain jo bacche khushi se karenge — force nahi karna padega!</div></div>
+    <div class="faq-item"><div class="faq-q">Payment ke baad book kaise milegi?<div class="faq-icon">+</div></div><div class="faq-a">Payment hote hi aapke email par download link aa jaayega. 2–3 minutes mein book aapke phone mein hogi!</div></div>
+    <div class="faq-item"><div class="faq-q">Agar results nahi aaye toh?<div class="faq-icon">+</div></div><div class="faq-a">Hamara 30-day full refund guarantee hai — bina kisi sawaal ke poora paisa wapas!</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🧠 Impulse Brain Trainer</div>
+  <div class="footer-tag">Bacchon Ka Dimag, Aapki Mehnat — Hum Karenge Aasaan!</div>
+  <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Refund Policy</a><a href="#">Contact Us</a><a href="#">Instagram</a></div>
+  <div class="footer-copy">© 2025 Impulse Brain Trainer · Made with ❤️ for India's Kids</div>
+</footer>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="payModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closePayment()">✕</button>
+    <div class="modal-top">
+      <span class="modal-emoji">🧠✨</span>
+      <div class="modal-heading">Secure Payment</div>
+      <div class="modal-price">Impulse Brain Trainer — ₹199 (Lifetime Access)</div>
+    </div>
+    <div id="pay-form">
+      <div class="method-tags">
+        <span class="method-tag">💳 Card</span>
+        <span class="method-tag">📱 UPI</span>
+        <span class="method-tag">🏦 Net Banking</span>
+        <span class="method-tag">💰 Wallet</span>
+      </div>
+      <div class="f-group"><label class="f-label">Aapka Naam (Parent/Guardian)</label><input class="f-input" type="text" id="p-name" placeholder="Jaise: Priya Sharma"/></div>
+      <div class="f-group"><label class="f-label">Email (Book Yahaan Milegi)</label><input class="f-input" type="email" id="p-email" placeholder="aapka@email.com"/></div>
+      <div class="f-group"><label class="f-label">Phone Number</label><input class="f-input" type="tel" id="p-phone" placeholder="10-digit number" maxlength="10"/></div>
+      <button class="modal-pay-btn" id="modal-btn" onclick="doPayment()">🚀 ₹199 Mein Khareedein</button>
+      <div class="modal-secure">🔒 Powered by Razorpay — 100% Secure</div>
+    </div>
+    <div class="success-box" id="pay-success">
+      <div class="confetti-bar"></div>
+      <span class="s-emoji">🎉</span>
+      <h3>Payment Successful!</h3>
+      <p>Aapki book ready hai — <strong>Abhi download karo!</strong><br>Email par bhi link bheja gaya hai.</p>
+      <div class="dl-box">
+        <div class="dl-box-title">📦 Aapka Complete Package — Abhi Download Karo!</div>
+        <a class="dl-btn pdf" id="dl-pdf" href="YOUR_PDF_LINK_HERE" download target="_blank">
+          📄 Brain Trainer Book — PDF Download
+        </a>
+        <a class="dl-btn epub" id="dl-epub" href="YOUR_EPUB_LINK_HERE" download target="_blank">
+          📱 Brain Trainer Book — ePub (Mobile)
+        </a>
+        <a class="dl-btn workbook" id="dl-wb" href="YOUR_WORKBOOK_LINK_HERE" download target="_blank">
+          📓 21-Day Workbook — PDF Download
+        </a>
+      </div>
+      <div class="pay-id-box" id="pay-id-show">Payment ID: —</div>
+      <p style="font-size:.72rem;color:#aaa;margin-top:.8rem">⚠️ Links save kar lo — yahi links dobara kaam karenge</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+// =============================================
+// ⚠️  APNI DETAILS YAHAN DAALEIN ⚠️
+const RZP_KEY    = 'rzp_live_APNI_KEY_YAHAN';   // razorpay.com → API Keys
+const YOUR_EMAIL = 'your@email.com';              // Book delivery email
+
+// 📁 APNI BOOK FILES KE LINKS YAHAN DAALEIN:
+// Google Drive link: Share > Anyone with link > Copy link
+// Phir link mein /view replace karo /export?format=pdf se
+const BOOK_PDF_URL      = 'YOUR_PDF_LINK_HERE';       // PDF book ka link
+const BOOK_EPUB_URL     = 'YOUR_EPUB_LINK_HERE';      // ePub book ka link
+const WORKBOOK_PDF_URL  = 'YOUR_WORKBOOK_LINK_HERE';  // Workbook ka link
+// =============================================
+
+// ── CONFETTI ──
+function launchConfetti(){
+  const colors=['#FFD93D','#FF6B35','#FF4DA6','#06D6A0','#4361EE','#7B2FBE'];
+  for(let i=0;i<80;i++){
+    const el=document.createElement('div');
+    const size=6+Math.random()*8;
+    el.style.cssText=`position:fixed;width:${size}px;height:${size}px;border-radius:${Math.random()>.5?'50%':'2px'};background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}vw;top:-10px;z-index:9999;pointer-events:none;animation:fall ${1.5+Math.random()*2}s ease-in forwards;animation-delay:${Math.random()*.8}s`;
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),4000);
+  }
+}
+// Add fall animation
+const confettiStyle=document.createElement('style');
+confettiStyle.textContent='@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:0}}';
+document.head.appendChild(confettiStyle);
+
+// Set download links from config
+document.getElementById('dl-pdf').href  = BOOK_PDF_URL;
+document.getElementById('dl-epub').href = BOOK_EPUB_URL;
+document.getElementById('dl-wb').href   = WORKBOOK_PDF_URL;
+
+// ── STARS & BUBBLES ──
+(function(){
+  const s=document.getElementById('stars');
+  for(let i=0;i<80;i++){const el=document.createElement('div');el.className='star';const sz=Math.random()*3+1;el.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*50}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s`;s.appendChild(el);}
+  const b=document.getElementById('bubbles');const cols=['#FFD93D','#FF4DA6','#4361EE','#06D6A0','#FF6B35','#7B2FBE'];
+  for(let i=0;i<12;i++){const el=document.createElement('div');el.className='bubble';const sz=40+Math.random()*100;el.style.cssText=`width:${sz}px;height:${sz}px;background:${cols[i%cols.length]};left:${Math.random()*100}%;top:${10+Math.random()*80}%;animation-delay:${Math.random()*4}s;animation-duration:${4+Math.random()*4}s`;b.appendChild(el);}
+})();
+
+// ── SCROLL REVEAL ──
+const revObs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*100);revObs.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(r=>revObs.observe(r));
+
+// ── FAQ ──
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{const o=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!o)item.classList.add('open');});
+});
+
+// ── PAYMENT ──
+function openPayment(){document.getElementById('payModal').classList.add('active');document.body.style.overflow='hidden';}
+function closePayment(){document.getElementById('payModal').classList.remove('active');document.body.style.overflow='';}
+document.getElementById('payModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closePayment();});
+
+function doPayment(){
+  const name=document.getElementById('p-name').value.trim();
+  const email=document.getElementById('p-email').value.trim();
+  const phone=document.getElementById('p-phone').value.trim();
+  if(!name||!email||!phone){alert('Kripya sabhi details bharein 🙏');return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Sahi email daalein');return;}
+  if(phone.length!==10){alert('10-digit phone number daalein');return;}
+  const btn=document.getElementById('modal-btn');
+  btn.textContent='Loading...';btn.disabled=true;
+  try{
+    const rzp=new Razorpay({
+      key:RZP_KEY,amount:19900,currency:'INR',
+      name:'Impulse Brain Trainer',description:'4–12 Saal Ke Bacchon Ki Brain Book',
+      prefill:{name,email,contact:phone},
+      notes:{product:'Impulse Brain Trainer'},
+      theme:{color:'#FFD93D'},
+      modal:{ondismiss:()=>{btn.textContent='🚀 ₹199 Mein Khareedein';btn.disabled=false;}},
+      handler:function(res){
+        // Show download box instantly
+        document.getElementById('pay-form').style.display='none';
+        document.getElementById('pay-success').style.display='block';
+        document.getElementById('pay-id-show').textContent='Payment ID: '+res.razorpay_payment_id;
+        // Update main buy button
+        const mb=document.getElementById('main-buy-btn');
+        mb.textContent='✅ Purchase Complete — Scroll Up to Download!';
+        mb.style.background='var(--green)';mb.disabled=true;
+        const ps=document.getElementById('pay-status');
+        ps.style.display='block';
+        ps.innerHTML='✅ Payment successful! <a href="#" onclick="openPayment()" style="color:var(--green);font-weight:800;text-decoration:underline">Download karne ke liye click karo ↑</a>';
+        // Confetti burst
+        launchConfetti();
+      }
+    });
+    rzp.on('payment.failed',r=>{alert('Payment fail: '+r.error.description);btn.textContent='🚀 ₹199 Mein Khareedein';btn.disabled=false;});
+    rzp.open();
+  }catch(e){
+    alert('Razorpay load nahi hua. UPI option use karein ya baad mein try karein.');
+    btn.textContent='🚀 ₹199 Mein Khareedein';btn.disabled=false;
+  }
+}
+
+// ── GAME TABS ──
+function switchGame(id,tab){
+  document.querySelectorAll('.game-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.gtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  tab.classList.add('active');
+  if(id==='quiz')initQuiz();
+  if(id==='wordsearch')initWS();
+  if(id==='memory')initMemory();
+  if(id==='maths')initMaths();
+  if(id==='logic')initLogic();
+}
+
+// ==================== QUIZ ====================
+const quizData=[
+  {q:'🌍 Hamare solar system mein kitne planets hain?',opts:['7','8','9','10'],ans:1},
+  {q:'💧 Pani ka chemical formula kya hai?',opts:['CO2','H2O','NaCl','O2'],ans:1},
+  {q:'🌈 Rainbow mein kitne rang hote hain?',opts:['5','6','7','8'],ans:2},
+  {q:'🐝 Shahad kaunsa insect banata hai?',opts:['Butterfly','Bee','Ant','Fly'],ans:1},
+  {q:'📖 India ki national language kaunsi hai?',opts:['English','Hindi','Sanskrit','Bengali'],ans:1},
+  {q:'🌙 Chaand dharti ka kya hai?',opts:['Planet','Star','Satellite','Comet'],ans:2},
+  {q:'🦁 Janwar ka raja kise kehte hain?',opts:['Tiger','Elephant','Lion','Cheetah'],ans:2},
+  {q:'🔢 12 × 12 = ?',opts:['124','144','132','148'],ans:1},
+  {q:'🌿 Photosynthesis mein plants kya banate hain?',opts:['CO2','Sugar','Water','Salt'],ans:1},
+  {q:'❤️ Heart ek minute mein kitni baar dhakdhakta hai?',opts:['40-50','60-100','120-150','20-30'],ans:1},
+];
+let qIdx=0,qScore=0,qAnswered=false;
+function initQuiz(){
+  qIdx=0;qScore=0;qAnswered=false;
+  document.getElementById('q-result').style.display='none';
+  document.getElementById('q-area').style.display='block';
+  renderQ();
+}
+function renderQ(){
+  const d=quizData[qIdx];
+  document.getElementById('q-text').textContent=d.q;
+  document.getElementById('q-score').textContent='Score: '+qScore;
+  document.getElementById('q-num').textContent='Sawaal: '+(qIdx+1)+'/10';
+  document.getElementById('q-bar').style.width=((qIdx+1)/10*100)+'%';
+  document.getElementById('q-fb').textContent='';
+  document.getElementById('q-next').style.display='none';
+  qAnswered=false;
+  const optsEl=document.getElementById('q-opts');
+  optsEl.innerHTML='';
+  d.opts.forEach((o,i)=>{
+    const b=document.createElement('button');b.className='qopt';b.textContent=o;
+    b.onclick=()=>answerQ(i,b);optsEl.appendChild(b);
+  });
+}
+function answerQ(i,btn){
+  if(qAnswered)return;qAnswered=true;
+  const correct=quizData[qIdx].ans;
+  document.querySelectorAll('.qopt').forEach((b,j)=>{b.disabled=true;if(j===correct)b.classList.add('correct');});
+  if(i===correct){qScore++;document.getElementById('q-fb').innerHTML='<span style="color:#06D6A0">✅ Sahi jawab! Bahut achha! 🎉</span>';}
+  else{btn.classList.add('wrong');document.getElementById('q-fb').innerHTML='<span style="color:#FF4DA6">❌ Galat! Sahi jawab: '+quizData[qIdx].opts[correct]+'</span>';}
+  document.getElementById('q-next').style.display='block';
+}
+function quizNext(){
+  qIdx++;
+  if(qIdx>=10){showQuizResult();return;}
+  renderQ();
+}
+function showQuizResult(){
+  document.getElementById('q-area').style.display='none';
+  document.getElementById('q-result').style.display='block';
+  const pct=qScore/10;
+  const emoji=pct>=.8?'🏆':pct>=.5?'😊':'💪';
+  const title=pct>=.8?'Brain Champion!':pct>=.5?'Achha Kiya!':'Practice Karo!';
+  const sub=`Tumhara score: ${qScore}/10 — ${pct>=.8?'Amazing performance!':pct>=.5?'Aur practice se aur better hoge!':'Koi baat nahi, dobara khelo aur improve karo!'}`;
+  document.getElementById('q-r-emoji').textContent=emoji;
+  document.getElementById('q-r-title').textContent=title;
+  document.getElementById('q-r-sub').textContent=sub;
+}
+initQuiz();
+
+// ==================== WORD SEARCH ====================
+const wsWords=['BRAIN','FOCUS','LEARN','SMART','THINK','POWER'];
+let wsGrid=[],wsSelecting=false,wsSelStart=null,wsSelCells=[],wsFound=0,wsTimer=0,wsTimerInt=null,wsFoundClass=[];
+function initWS(){
+  wsFound=0;wsTimer=0;wsFoundClass=[];clearInterval(wsTimerInt);
+  document.getElementById('ws-result').style.display='none';
+  document.getElementById('ws-found').textContent='Mila: 0/6';
+  document.getElementById('ws-time').textContent='⏱ 0s';
+  const SIZE=10;wsGrid=Array.from({length:SIZE},()=>Array(SIZE).fill(''));
+  // Place words
+  const dirs=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0]];
+  wsWords.forEach(word=>{
+    let placed=false;let tries=0;
+    while(!placed&&tries<200){
+      tries++;
+      const dir=dirs[Math.floor(Math.random()*dirs.length)];
+      const r=Math.floor(Math.random()*SIZE),c=Math.floor(Math.random()*SIZE);
+      let ok=true;const cells=[];
+      for(let i=0;i<word.length;i++){const nr=r+dir[0]*i,nc=c+dir[1]*i;if(nr<0||nr>=SIZE||nc<0||nc>=SIZE){ok=false;break;}if(wsGrid[nr][nc]&&wsGrid[nr][nc]!==word[i]){ok=false;break;}cells.push([nr,nc]);}
+      if(ok){cells.forEach(([nr,nc],i)=>wsGrid[nr][nc]=word[i]);placed=true;}
+    }
+  });
+  // Fill blanks
+  for(let r=0;r<SIZE;r++)for(let c=0;c<SIZE;c++)if(!wsGrid[r][c])wsGrid[r][c]='ABCDEFGHIJKLMNOPQRSTUVWXYZ'[Math.floor(Math.random()*26)];
+  // Render words list
+  const wl=document.getElementById('ws-words');wl.innerHTML='';
+  wsWords.forEach(w=>{const s=document.createElement('span');s.className='word-tag';s.id='wtag-'+w;s.textContent=w;wl.appendChild(s);});
+  // Render grid
+  const g=document.getElementById('ws-grid');g.innerHTML='';
+  wsGrid.forEach((row,r)=>row.forEach((ch,c)=>{
+    const cell=document.createElement('div');cell.className='wcell';cell.textContent=ch;cell.dataset.r=r;cell.dataset.c=c;
+    cell.addEventListener('mousedown',wsStart);cell.addEventListener('mouseover',wsOver);cell.addEventListener('touchstart',wsTStart,{passive:true});cell.addEventListener('touchmove',wsTMove,{passive:true});
+    g.appendChild(cell);
+  }));
+  document.addEventListener('mouseup',wsEnd);document.addEventListener('touchend',wsEnd);
+  wsTimerInt=setInterval(()=>{wsTimer++;document.getElementById('ws-time').textContent='⏱ '+wsTimer+'s';},1000);
+}
+function getCellAt(r,c){return document.querySelector(`#ws-grid .wcell[data-r="${r}"][data-c="${c}"]`);}
+function wsGetLine(r1,c1,r2,c2){
+  const cells=[];const dr=Math.sign(r2-r1),dc=Math.sign(c2-c1);
+  const len=Math.max(Math.abs(r2-r1),Math.abs(c2-c1));
+  for(let i=0;i<=len;i++)cells.push([r1+dr*i,c1+dc*i]);return cells;
+}
+function wsStart(e){wsSelecting=true;wsSelStart=[+e.target.dataset.r,+e.target.dataset.c];wsSelCells=[[+e.target.dataset.r,+e.target.dataset.c]];e.target.classList.add('selecting');}
+function wsOver(e){
+  if(!wsSelecting||!wsSelStart)return;
+  document.querySelectorAll('.wcell.selecting').forEach(el=>el.classList.remove('selecting'));
+  const r2=+e.target.dataset.r,c2=+e.target.dataset.c;
+  const line=wsGetLine(wsSelStart[0],wsSelStart[1],r2,c2);
+  wsSelCells=line;line.forEach(([r,c])=>{const el=getCellAt(r,c);if(el)el.classList.add('selecting');});
+}
+function wsTStart(e){const t=e.touches[0];const el=document.elementFromPoint(t.clientX,t.clientY);if(el&&el.classList.contains('wcell'))wsStart({target:el});}
+function wsTMove(e){const t=e.touches[0];const el=document.elementFromPoint(t.clientX,t.clientY);if(el&&el.classList.contains('wcell'))wsOver({target:el});}
+function wsEnd(){
+  if(!wsSelecting){return;}wsSelecting=false;
+  const word=wsSelCells.map(([r,c])=>wsGrid[r][c]).join('');
+  const rword=word.split('').reverse().join('');
+  const matched=wsWords.find(w=>w===word||w===rword);
+  document.querySelectorAll('.wcell.selecting').forEach(el=>el.classList.remove('selecting'));
+  if(matched&&!wsFoundClass.includes(matched)){
+    const cls='found'+(wsFoundClass.length);wsFoundClass.push(matched);
+    wsSelCells.forEach(([r,c])=>{const el=getCellAt(r,c);if(el){el.classList.remove('selecting');el.classList.add(cls);}});
+    document.getElementById('wtag-'+matched).classList.add('found');
+    wsFound++;document.getElementById('ws-found').textContent='Mila: '+wsFound+'/6';
+    if(wsFound>=6){clearInterval(wsTimerInt);setTimeout(()=>{document.getElementById('ws-r-time').textContent='Time: '+wsTimer+' seconds mein sab words mile! 🎉';document.getElementById('ws-result').style.display='block';},400);}
+  }
+  wsSelStart=null;wsSelCells=[];
+}
+initWS();
+
+// ==================== MEMORY ====================
+const memEmojis=['🦁','🐬','🦋','🌈','⭐','🎯','🚀','🎸'];
+let memCards=[],memFlipped=[],memMatched=0,memMoves=0,memLock=false;
+function initMemory(){
+  memFlipped=[];memMatched=0;memMoves=0;memLock=false;
+  document.getElementById('m-result').style.display='none';
+  document.getElementById('m-pairs').textContent='Pairs: 0/8';
+  document.getElementById('m-moves').textContent='Moves: 0';
+  memCards=[...memEmojis,...memEmojis].sort(()=>Math.random()-.5);
+  const g=document.getElementById('mem-grid');g.innerHTML='';
+  memCards.forEach((em,i)=>{
+    const card=document.createElement('div');card.className='mcard';card.dataset.idx=i;card.dataset.em=em;
+    card.innerHTML=`<div class="mcard-inner"><div class="mcard-front">?</div><div class="mcard-back">${em}</div></div>`;
+    card.onclick=()=>flipCard(card);g.appendChild(card);
+  });
+}
+function flipCard(card){
+  if(memLock||card.classList.contains('flipped')||card.classList.contains('matched'))return;
+  card.classList.add('flipped');memFlipped.push(card);
+  if(memFlipped.length===2){
+    memMoves++;document.getElementById('m-moves').textContent='Moves: '+memMoves;memLock=true;
+    if(memFlipped[0].dataset.em===memFlipped[1].dataset.em){
+      memFlipped.forEach(c=>c.classList.add('matched'));memMatched++;
+      document.getElementById('m-pairs').textContent='Pairs: '+memMatched+'/8';
+      memFlipped=[];memLock=false;
+      if(memMatched===8){setTimeout(()=>{document.getElementById('m-r-sub').textContent=memMoves+' moves mein sab pairs mile! '+( memMoves<=16?'🏆 Perfect!':memMoves<=22?'😊 Achha!':'💪 Practice karo!');document.getElementById('m-result').style.display='block';},400);}
+    }else{
+      setTimeout(()=>{memFlipped.forEach(c=>c.classList.remove('flipped'));memFlipped=[];memLock=false;},1000);
+    }
+  }
+}
+initMemory();
+
+// ==================== MENTAL MATHS ====================
+let mmQ=0,mmScore=0,mmAns=0,mmInt=null,mmTimeLeft=10,mmRunning=false;
+const mmLevels=[
+  ()=>{const a=r(2,10),b=r(2,10);return{q:`${a} + ${b} = ?`,a:a+b}},
+  ()=>{const a=r(5,20),b=r(1,a);return{q:`${a} - ${b} = ?`,a:a-b}},
+  ()=>{const a=r(2,9),b=r(2,9);return{q:`${a} × ${b} = ?`,a:a*b}},
+  ()=>{const a=r(2,9),b=r(2,9);return{q:`${a*b} ÷ ${b} = ?`,a:a}},
+];
+function r(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function initMaths(){mmQ=0;mmScore=0;mmRunning=false;clearInterval(mmInt);document.getElementById('mm-result').style.display='none';document.getElementById('mm-area').style.display='block';document.getElementById('mm-start').style.display='block';document.getElementById('mm-prob').textContent='Press Start!';document.getElementById('mm-t').textContent='10';document.getElementById('mm-tb').style.width='100%';document.getElementById('mm-fb').textContent='';document.getElementById('mm-score').textContent='Score: 0';document.getElementById('mm-num').textContent='Q: 1/10';}
+function startMaths(){mmQ=0;mmScore=0;document.getElementById('mm-start').style.display='none';nextMM();}
+function nextMM(){
+  if(mmQ>=10){showMMResult();return;}
+  clearInterval(mmInt);mmTimeLeft=10;mmRunning=true;
+  document.getElementById('mm-fb').textContent='';document.getElementById('mm-ans').value='';
+  const prob=mmLevels[mmQ%4]();mmAns=prob.a;
+  document.getElementById('mm-prob').textContent=prob.q;
+  document.getElementById('mm-score').textContent='Score: '+mmScore;
+  document.getElementById('mm-num').textContent='Q: '+(mmQ+1)+'/10';
+  document.getElementById('mm-ans').focus();
+  mmInt=setInterval(()=>{
+    mmTimeLeft--;document.getElementById('mm-t').textContent=mmTimeLeft;
+    document.getElementById('mm-tb').style.width=(mmTimeLeft/10*100)+'%';
+    if(mmTimeLeft<=0){clearInterval(mmInt);mmRunning=false;document.getElementById('mm-fb').innerHTML='<span style="color:#FF4DA6">⏰ Time up! Jawab tha: '+mmAns+'</span>';mmQ++;setTimeout(nextMM,1200);}
+  },1000);
+}
+function mmCheck(){
+  if(!mmRunning)return;
+  clearInterval(mmInt);mmRunning=false;
+  const val=parseInt(document.getElementById('mm-ans').value);
+  if(val===mmAns){mmScore++;document.getElementById('mm-fb').innerHTML='<span style="color:#06D6A0">✅ Sahi! Bahut achha! 🎉</span>';}
+  else{document.getElementById('mm-fb').innerHTML='<span style="color:#FF4DA6">❌ Galat! Sahi jawab: '+mmAns+'</span>';}
+  mmQ++;setTimeout(nextMM,1000);
+}
+function showMMResult(){
+  document.getElementById('mm-area').style.display='none';document.getElementById('mm-start').style.display='none';document.getElementById('mm-result').style.display='block';
+  const pct=mmScore/10;
+  document.getElementById('mm-r-emoji').textContent=pct>=.8?'🏆':pct>=.5?'😊':'💪';
+  document.getElementById('mm-r-title').textContent=pct>=.8?'Maths Champion!':pct>=.5?'Achha Kiya!':'Aur Practice Karo!';
+  document.getElementById('mm-r-sub').textContent='Score: '+mmScore+'/10 — '+( pct>=.8?'Kamaal ka maths brain hai tumhara!':pct>=.5?'Thodi aur practice aur tum expert ban jaoge!':'Koi baat nahi, roz practice karo!');
+}
+initMaths();
+
+// ==================== LOGIC ====================
+const logicLevels=[
+  {seq:['🔴','🔵','🔴','🔵','❓'],ans:'🔴',opts:['🔴','🟢','🟡','🔵']},
+  {seq:['1️⃣','2️⃣','3️⃣','4️⃣','❓'],ans:'5️⃣',opts:['5️⃣','6️⃣','7️⃣','4️⃣']},
+  {seq:['🌙','⭐','🌙','⭐','❓'],ans:'🌙',opts:['⭐','🌙','☀️','🌈']},
+  {seq:['🐱','🐱','🐶','🐱','🐱','❓'],ans:'🐶',opts:['🐱','🐶','🐸','🐭']},
+  {seq:['2️⃣','4️⃣','6️⃣','8️⃣','❓'],ans:'🔟',opts:['🔟','9️⃣','1️⃣1️⃣','7️⃣']},
+  {seq:['🍎','🍌','🍊','🍎','🍌','❓'],ans:'🍊',opts:['🍎','🍌','🍊','🍇']},
+  {seq:['⬆️','➡️','⬇️','⬅️','❓'],ans:'⬆️',opts:['➡️','⬆️','⬇️','⬅️']},
+  {seq:['🌸','🌸','🌸','🌼','🌸','🌸','🌸','❓'],ans:'🌼',opts:['🌸','🌼','🌻','🌺']},
+  {seq:['1️⃣','3️⃣','5️⃣','7️⃣','❓'],ans:'9️⃣',opts:['8️⃣','9️⃣','🔟','6️⃣']},
+  {seq:['🔺','🔺','🔷','🔺','🔺','❓'],ans:'🔷',opts:['🔺','🔷','🔴','🔵']},
+];
+let lgIdx=0,lgScore=0;
+function initLogic(){lgIdx=0;lgScore=0;document.getElementById('lg-result').style.display='none';document.getElementById('lg-area').style.display='block';renderLogic();}
+function renderLogic(){
+  const lv=logicLevels[lgIdx];
+  document.getElementById('lg-score').textContent='Score: '+lgScore;
+  document.getElementById('lg-lvl').textContent='Level: '+(lgIdx+1)+'/10';
+  document.getElementById('lg-fb').textContent='';
+  document.getElementById('lg-next').style.display='none';
+  const seqEl=document.getElementById('lg-seq');seqEl.innerHTML='';
+  lv.seq.forEach(s=>{const d=document.createElement('div');d.className='lseq-item'+(s==='❓'?' blank':'');d.textContent=s==='❓'?'?':s;seqEl.appendChild(d);});
+  const optsEl=document.getElementById('lg-opts');optsEl.innerHTML='';
+  lv.opts.sort(()=>Math.random()-.5).forEach(o=>{
+    const d=document.createElement('div');d.className='lopt';d.textContent=o;
+    d.onclick=()=>answerLogic(o,d);optsEl.appendChild(d);
+  });
+}
+function answerLogic(ans,btn){
+  const correct=logicLevels[lgIdx].ans;
+  document.querySelectorAll('.lopt').forEach(b=>{b.style.pointerEvents='none';if(b.textContent===correct)b.classList.add('correct-l');});
+  if(ans===correct){lgScore++;document.getElementById('lg-fb').innerHTML='<span style="color:#06D6A0">✅ Sahi! Bahut smart ho! 🎉</span>';}
+  else{btn.classList.add('wrong-l');document.getElementById('lg-fb').innerHTML='<span style="color:#FF4DA6">❌ Galat! Sahi: '+correct+'</span>';}
+  document.getElementById('lg-next').style.display='block';
+}
+function logicNext(){lgIdx++;if(lgIdx>=10){showLGResult();return;}renderLogic();}
+function showLGResult(){
+  document.getElementById('lg-area').style.display='none';document.getElementById('lg-result').style.display='block';
+  const pct=lgScore/10;
+  document.getElementById('lg-r-emoji').textContent=pct>=.8?'🔮':pct>=.5?'🧩':'💪';
+  document.getElementById('lg-r-title').textContent=pct>=.8?'Logic Genius!':pct>=.5?'Good Thinker!':'Aur Socho!';
+  document.getElementById('lg-r-sub').textContent='Score: '+lgScore+'/10 — '+(pct>=.8?'Tumhara logical brain bahut tez hai!':pct>=.5?'Achha kiya, aur practice se master ban jaoge!':'Koi baat nahi — practice se sab ho sakta hai!');
+}
+initLogic();
+</script>
+</body>
+</html>
